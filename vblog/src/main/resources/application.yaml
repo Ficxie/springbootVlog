@@ -1,0 +1,7 @@
+server:
+  port: 8890
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+  messages:
+    basename: i18n.login

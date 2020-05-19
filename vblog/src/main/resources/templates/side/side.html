@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>side</title>
+    <link th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.css}">
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<nav th:fragment="top" style="height: 50px;background-color: #c1c1c1;margin: 0;padding: 0 20px">
+    <div>Welcome dear [[${session.username}]]</div>
+</nav>
+<nav th:fragment="left" style="height: 650px;width: 80px;background-color: #c1c1c1;margin: 0;padding: 0 20px;">
+    <ul>
+        <li style="list-style: none"><a th:class="${choose=='home'?'active':'nav-link'}" style="text-decoration-line: none" th:href="@{/home.html}" href="../home.html">main</a></li>
+        <li style="list-style: none"><a th:class="${choose=='emp'?'active':'nav-link'}" style="text-decoration-line: none" th:href="@{/getemp}" href="../emp/employee.html">emp</a></li>
+    </ul>
+</nav>
+<footer th:fragment="bottom">
+    &copy;2020 The FIC blog
+</footer>
+</body>
+</html>

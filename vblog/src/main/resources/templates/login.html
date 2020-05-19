@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+<h1 th:text="#{login.hello}">hellow world!</h1>
+<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+<form method="post" th:action="@{/login}">
+    <input name="username" type="text" th:placeholder="#{login.username}">
+    <input name="password" type="password" th:placeholder="#{login.password}">
+    <div>
+        <input  type="submit" th:value="#{login.loginbtn}"/>
+        <input  type="button" th:value="#{login.registerbtn}"/>
+    </div>
+</form>
+
+<div>
+    <a th:href="@{/home.html(l='zh_CN')}">中文</a>
+    <a th:href="@{/home.html(l='en_US')}">English</a>
+</div>
+
+</body>
+</html>
